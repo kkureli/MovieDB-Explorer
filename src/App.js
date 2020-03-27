@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default function componentName() {
   return (
-    <Router>
+    <Router basename={"MovieExplorer"}>
       {/* <Route path="/" component={Navbar}></Route> */}
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
@@ -15,6 +15,6 @@ export default function componentName() {
         <Route path="/:id" render={routerProps => <Movie {...routerProps} />} />
         <Route exact path="/" component={Home} />
       </Switch>
-    </Router>
+    </Route>
   );
 }

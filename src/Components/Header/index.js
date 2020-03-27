@@ -16,7 +16,6 @@ export default class Header extends React.Component {
             </button>
           </Link>
 
-          {/* <NavBar></NavBar> */}
           <div className="search">
             <form onSubmit={this.props.onSubmit}>
               <i className="fas fa-search"></i>
