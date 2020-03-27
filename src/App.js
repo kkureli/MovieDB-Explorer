@@ -12,9 +12,12 @@ export default function componentName() {
       <Switch>
         <Route exact path="/home" render={() => <Home />} />
 
-        <Route path="/:id" render={routerProps => <Movie {...routerProps} />} />
+        <Router
+          path="/:id"
+          render={routerProps => <Movie {...routerProps} />}
+        />
         <Route exact path="/" component={Home} />
       </Switch>
-    </Route>
+    </Router>
   );
 }
