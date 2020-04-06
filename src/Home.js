@@ -2,7 +2,6 @@ import React from "react";
 // import movies from './data';
 import MoviesList from "./Components/MovieList/index.js";
 import Header from "./Components/Header/index.js";
-import Movie from "./Components/Movie";
 
 class Home extends React.Component {
   constructor() {

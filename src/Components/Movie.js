@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Header/index";
-import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
+import uuid from "react-uuid";
 
 const baseURL = "http://image.tmdb.org/t/p/w1280/";
 
@@ -101,9 +100,9 @@ function Movie(props, match) {
               {details &&
                 details.genres.map((genre, index, array) => {
                   return (
-                    <span>
+                    <span key={uuid()}>
                       {genre.name}
-                      <span>{array.length - 1 != index ? ", " : null}</span>
+                      <span>{array.length - 1 !== index ? ", " : null}</span>
                     </span>
                   );
                 })}
@@ -115,7 +114,7 @@ function Movie(props, match) {
                   Budget:{" "}
                   <span>
                     {" "}
-                    {details.budget === 0 ? "Unfound" : details.budget}{" "}
+                    {details.budget === 0 ? "Unfound" : details.budget} $
                   </span>{" "}
                 </p>
               </div>
@@ -135,10 +134,10 @@ function Movie(props, match) {
                         details.production_companies.map(
                           (genre, index, array) => {
                             return (
-                              <span>
+                              <span key={uuid()}>
                                 {genre.name}
                                 <span>
-                                  {array.length - 1 != index ? ", " : null}
+                                  {array.length - 1 !== index ? ", " : null}
                                 </span>
                               </span>
                             );
@@ -176,6 +175,7 @@ function Movie(props, match) {
               cast.slice(0, 10).map((cast, index, array) => {
                 return (
                   <div
+                    key={uuid()}
                     style={{ width: "250px", display: "inline-block" }}
                     class="card ml-2 mr-2 mt-2 mb-2 "
                   >

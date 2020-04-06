@@ -1,5 +1,4 @@
 import React from "react";
-// import movies from './data';
 import MoviesList from "../Components/MovieList/index";
 import Header from "../Components/Header/index.js";
 
@@ -15,7 +14,6 @@ class NowPlaying extends React.Component {
 
   onChange = (e) => {
     this.setState({ searchForm: e.target.value });
-    console.log(this.state);
   };
 
   onSubmit = (event) => {
@@ -25,7 +23,6 @@ class NowPlaying extends React.Component {
   };
   imgClicked = (clickedMovie) => {
     this.setState({ clickedMovie: clickedMovie });
-    console.log(this.state);
   };
 
   BASE_URL = "https://api.themoviedb.org/3";
@@ -35,12 +32,9 @@ class NowPlaying extends React.Component {
     fetch(`${this.BASE_URL}/movie/now_playing?api_key=${this.API_KEY}`)
       .then((resp) => resp.json())
       .then((json) => {
-        this.setState(
-          {
-            movies: json.results,
-          },
-          () => console.log(this.state)
-        );
+        this.setState({
+          movies: json.results,
+        });
       });
   };
 

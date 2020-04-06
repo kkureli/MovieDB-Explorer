@@ -6,16 +6,14 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
-import Movie from "../Movie";
-import { Route } from "react-router-dom";
+import uuid from "react-uuid";
 
 export default class MoviesList extends Component {
   render() {
     const baseURL = "http://image.tmdb.org/t/p/w1280/";
-    console.log("pp", this.props);
 
     const list = this.props.movies.map((movie) => (
-      <Grid item xs={4}>
+      <Grid key={uuid()} item xs={4}>
         {}
         <Paper>
           <Card>

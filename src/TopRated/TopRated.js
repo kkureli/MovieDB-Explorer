@@ -15,7 +15,6 @@ class TopRated extends React.Component {
 
   onChange = (e) => {
     this.setState({ searchForm: e.target.value });
-    console.log(this.state);
   };
 
   onSubmit = (event) => {
@@ -25,7 +24,6 @@ class TopRated extends React.Component {
   };
   imgClicked = (clickedMovie) => {
     this.setState({ clickedMovie: clickedMovie });
-    console.log(this.state);
   };
 
   BASE_URL = "https://api.themoviedb.org/3";
@@ -35,12 +33,9 @@ class TopRated extends React.Component {
     fetch(`${this.BASE_URL}/movie/top_rated?api_key=${this.API_KEY}`)
       .then((resp) => resp.json())
       .then((json) => {
-        this.setState(
-          {
-            movies: json.results,
-          },
-          () => console.log(this.state)
-        );
+        this.setState({
+          movies: json.results,
+        });
       });
   };
 
