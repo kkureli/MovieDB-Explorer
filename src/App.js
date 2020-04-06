@@ -4,16 +4,24 @@ import Movie from "./Components/Movie";
 import Navbar from "./Components/Header/";
 
 import { BrowserRouter as HashRouter, Route, Switch } from "react-router-dom";
+import NowPlaying from "./NowPlaying/NowPlaying";
+import TopRated from "./TopRated/TopRated";
+import ComingSoon from "./ComingSoon/ComingSoon";
 
 export default function componentName() {
   return (
     <HashRouter basename={"MovieExplorer"}>
       {/* <Route path="/" component={Navbar}></Route> */}
       <Switch>
-        <Route exact path="/home" render={() => <Home />} />
-
-        <Route path="/:id" render={routerProps => <Movie {...routerProps} />} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/now_playing" component={NowPlaying} />
+        <Route exact path="/upcoming" component={ComingSoon} />
+        <Route exact path="/top_rated" component={TopRated} />
+        <Route exact path="/popular" component={Home} />
+        <Route exact path="/" component={NowPlaying} />
+        <Route
+          path="/:id"
+          render={(routerProps) => <Movie {...routerProps} />}
+        />
       </Switch>
     </HashRouter>
   );

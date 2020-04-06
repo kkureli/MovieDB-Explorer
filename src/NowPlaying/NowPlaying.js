@@ -1,10 +1,9 @@
 import React from "react";
 // import movies from './data';
-import MoviesList from "./Components/MovieList/index.js";
-import Header from "./Components/Header/index.js";
-import Movie from "./Components/Movie";
+import MoviesList from "../Components/MovieList/index";
+import Header from "../Components/Header/index.js";
 
-class Home extends React.Component {
+class NowPlaying extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -33,7 +32,7 @@ class Home extends React.Component {
   API_KEY = "542003918769df50083a13c415bbc602";
 
   componentDidMount = () => {
-    fetch(`${this.BASE_URL}/movie/popular?api_key=${this.API_KEY}`)
+    fetch(`${this.BASE_URL}/movie/now_playing?api_key=${this.API_KEY}`)
       .then((resp) => resp.json())
       .then((json) => {
         this.setState(
@@ -66,9 +65,10 @@ class Home extends React.Component {
             class=" border bg-info rounded mt-2"
             style={{ textAlign: "center" }}
           >
-            Most Populars Today!
+            Now Showing!
           </h1>
         </div>
+
         <MoviesList
           routerProps={this.props.routeProps}
           imgClicked={this.imgClicked}
@@ -80,4 +80,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default NowPlaying;

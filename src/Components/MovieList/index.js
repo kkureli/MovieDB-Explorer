@@ -12,8 +12,9 @@ import { Route } from "react-router-dom";
 export default class MoviesList extends Component {
   render() {
     const baseURL = "http://image.tmdb.org/t/p/w1280/";
+    console.log("pp", this.props);
 
-    const list = this.props.movies.map(movie => (
+    const list = this.props.movies.map((movie) => (
       <Grid item xs={4}>
         {}
         <Paper>
@@ -28,8 +29,8 @@ export default class MoviesList extends Component {
                       Title: movie.title,
                       PosterPath: movie.poster_path,
                       ReleaseDate: movie.release_date,
-                      VoteAverage: movie.vote_average
-                    }
+                      VoteAverage: movie.vote_average,
+                    },
                   }}
                 >
                   <img
