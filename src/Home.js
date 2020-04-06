@@ -61,10 +61,7 @@ class Home extends React.Component {
       <div>
         <Header onSubmit={this.onSubmit} onChange={this.onChange} />
         <div class="container">
-          <h1
-            class=" border bg-info rounded mt-2"
-            style={{ textAlign: "center" }}
-          >
+          <h1 class="  text-white mb-3 mt-2" style={{ textAlign: "center" }}>
             Most Populars Today!
           </h1>
         </div>
